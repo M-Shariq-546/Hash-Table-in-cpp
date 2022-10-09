@@ -45,7 +45,7 @@ class hashtable
                         count++;
                     }
         }
-        void getValue(int k)
+        void Search(int k)
         {
             int x = k % size;
             if(arr[x] != -9999)
@@ -104,12 +104,12 @@ int main()
     ht.add(11 , 8);
     ht.add(35 , 6);
     ht.print();
-    ht.getValue(35);
-    ht.getValue(38);
-    ht.getValue(11);
+    ht.Search(35);
+    ht.Search(38);
+    ht.Search(11);
     ht.percentage();
     ht.deleteElement(21);
     ht.print();
     ht.percentage();
     return 0;
-}
+}   
