@@ -3,14 +3,15 @@
 using namespace std;
 class hashtable
 {
-    int size = 10;
-    int arr[10];
+    int size = 16;
+    int arr[16];
     int count = 0;
     public:
         void welcomeMessage()
         {
-            cout<<"Welcome to Hash Table by M. Shariq Shafiq"<<endl;
-            cout<<"-9999 stands for empty space in the array "<<endl;
+            cout<<"Welcome to Hash Table by \"M. Shariq Shafiq\""<<endl;
+            cout<<"Roll Number \"546\""<<endl;
+            cout<<"\"-9999\" stands for empty space in the array "<<endl;
             cout<<"So Enjoy the code"<<endl;
         }
         void initialArray()
@@ -20,9 +21,13 @@ class hashtable
                 arr[i] = -9999;
             }
         }
+        int hashFunction(int k)
+        {
+            return k % size;
+        }
         void add(int k , int v)
         {
-            int x = k % size;
+            int x = hashFunction(k);
                     //For Inserting value on an Empty index
                     if(arr[x] == -9999)
                     {
@@ -47,7 +52,7 @@ class hashtable
         }
         void Search(int k)
         {
-            int x = k % size;
+            int x = hashFunction(k);
             if(arr[x] != -9999)
             {
                 //Value Found 
@@ -69,7 +74,7 @@ class hashtable
         }
         void deleteElement(int k)
         {
-            int x = k % size;
+            int x = hashFunction(k);
             if(arr[x] == -9999)
             {
                 //Already Empty space Exception
@@ -99,17 +104,25 @@ int main()
     hashtable ht;
     ht.welcomeMessage();
     ht.initialArray();
-    ht.add(20 , 5);
-    ht.add(21 , 4);
-    ht.add(11 , 8);
-    ht.add(35 , 6);
+    //Adding key value Pair
+    ht.add(0 , 5);
+    ht.add(1 , 4);
+    ht.add(4 , 6);
+    ht.add(5 , 0);
+    ht.add(8 , 4);
+    ht.add(13 , 5);
+    ht.add(11 , 2);
+    ht.add(12 , 2);
+    ht.add(15 , 6);
     ht.print();
-    ht.Search(35);
-    ht.Search(38);
-    ht.Search(11);
+    //Searching on key base
+    ht.Search(5);
+    ht.Search(8);
+    ht.Search(1);
     ht.percentage();
-    ht.deleteElement(21);
+    //Delete on key base
+    ht.deleteElement(12);
     ht.print();
     ht.percentage();
     return 0;
-}   
+}
