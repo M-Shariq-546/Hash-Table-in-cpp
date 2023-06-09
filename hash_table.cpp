@@ -56,11 +56,11 @@ class hashtable
             if(arr[x] != -9999)
             {
                 //Value Found 
-                cout<<"The value is : "<<arr[x]<<endl;
+                cout<<"The value is : "<<arr[x]<<"\tat the key of : "<<k<<endl;
             }
             else{
                 //Value Not Found Exception
-                cout<<"No value Found"<<endl;
+                cout<<"No value Found at key : "<<k<<endl;
             }
         }
         void print()
@@ -83,7 +83,7 @@ class hashtable
             else{
                 int y = arr[x];
                 arr[x] = -9999;
-                cout<<"The element \""<<y<<"\" is successfully deleted."<<endl;
+                cout<<"The element \""<<y<<"\" is successfully deleted. Respected to key : "<<k<<endl;
                 count--;
             }
         }
